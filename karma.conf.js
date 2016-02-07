@@ -1,4 +1,3 @@
-const webpack = require('webpack');
 const path = require('path');
 
 const _IS_CI_ = process.env.CONTINUOUS_INTEGRATION;
@@ -35,6 +34,7 @@ module.exports = config => {
     webpack: {
       devtool: 'inline-source-map',
       module: {
+        noParse: [/node_modules\/sinon\//],
         loaders: [{
           test: /\.jsx?$/,
           loader: 'babel',
@@ -42,6 +42,12 @@ module.exports = config => {
             path.join(__dirname, 'tests'),
             path.join(__dirname, 'src'),
           ],
+        }, {
+          test: /\.json$/,
+          loader: 'json',
+        }, {
+          test: /sinon.*\.js$/,
+          loader: 'imports?define=>false,require=>false',
         }],
         postLoaders: [{
           test: /\.jsx?$/,
@@ -54,10 +60,17 @@ module.exports = config => {
       node: {
         fs: 'empty',
       },
-      plugins: [
-        new webpack.IgnorePlugin(/ReactContext/),
-      ],
-      resolve: { extensions: ['', '.js', '.jsx'] },
+      resolve: {
+        extensions: ['', '.js', '.jsx', '.json'],
+        alias: {
+          'sinon': 'sinon/pkg/sinon',
+        },
+      },
+      externals: {
+        'jsdom': 'window',
+        'react/lib/ExecutionEnvironment': true,
+        'react/lib/ReactContext': true,
+      },
     },
     webpackMiddleware: {
       noInfo: true,
