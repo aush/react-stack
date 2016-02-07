@@ -14,11 +14,14 @@ module.exports = config => {
     coverageReporter: _IS_CI_ ?
       { type: 'lcov', dir: 'coverage/' } :
       { type: 'html', dir: 'coverage/' },
-    autoWatch: _IS_CI_ ? false : true,
-    singleRun: (_IS_CI_ || _IS_BUILDING_PACKAGE_) ? true : false,
+    // autoWatch: _IS_CI_ ? false : true,
+    autoWatch: false,
+    // singleRun: (_IS_CI_ || _IS_BUILDING_PACKAGE_) ? true : false,
+    singleRun: true,
     browsers: _IS_TRAVIS_CI_ ?
       ['Chrome_travis_ci'] :
-      ['Chrome'],
+      // ['Chrome'],
+      [],
     customLaunchers: {
       Chrome_travis_ci: {
         base: 'Chrome',

@@ -15,11 +15,15 @@ import { VerticalStack, HorizontalStack } from 'react-stack';
 // or for brevity import { Vertical, Horizontal } from 'react-stack';
 
 ReactDOM.render(
-  <div style={{ background: '#9e9e9e', width: '100vw', height: '100vh' }}>
-    <Stack aspectRatio={[5, 3]}>
-      <div style={{ background: '#607d8b', width: '100%', height: '100%' }} />
-    </Stack>
-  </div>,
+  <HorizontalStack>
+    <div />
+    <div />
+    <VerticalStack>
+      <div />
+      <div />
+      <div />
+    </VerticalStack>
+  </HorizontalStack>,
   document.getElementById('app')
 );
 ```
