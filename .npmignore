@@ -5,7 +5,6 @@
 .gitignore
 .npmignore
 .travis.yml
-appveyor.yml
 coverage
 demo
 karma*

@@ -15,15 +15,18 @@ import { VerticalStack, HorizontalStack } from 'react-stack';
 // or for brevity import { Vertical, Horizontal } from 'react-stack';
 
 ReactDOM.render(
-  <HorizontalStack>
-    <div />
-    <div />
-    <VerticalStack>
-      <div />
-      <div />
-      <div />
-    </VerticalStack>
-  </HorizontalStack>,
+  <Horizontal>
+    <div>1</div>
+    <div>2</div>
+    <Vertical alignItems={'center'}>
+      <div>3</div>
+      <Horizontal grow={1}>
+        <div align={'end'}>4</div>
+        <div align={'center'}>5</div>
+        <div align={'end'} basis={30}>6</div>
+      </Horizontal>
+    </Vertical>
+  </Horizontal>,
   document.getElementById('app')
 );
 ```
@@ -68,3 +71,4 @@ npm run build
 npm start
 ```
 ###Codepen example
+http://codepen.io/aush/pen/obQvjo
