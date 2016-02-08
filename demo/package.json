@@ -1,6 +1,6 @@
 {
-  "name": "react-rectangle-demo",
-  "description": "Demo for react-rectangle component",
+  "name": "react-stack-demo",
+  "description": "Demo for react-stack component",
   "scripts": {
     "build": "webpack --display-error-details --progress",
     "start": "opn build/index.html"
