@@ -81,7 +81,7 @@ describe('Flex', () => {
       });
 
       it('should pass an alignItems', () => {
-        const wrapper = shallow(<Flex alignItems={'flex-end'} />);
+        const wrapper = shallow(<Flex alignItems={'end'} />);
 
         expect(wrapper.prop('style')).to.have.property('alignItems', 'flex-end');
       });
