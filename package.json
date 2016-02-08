@@ -80,6 +80,7 @@
   },
   "dependencies": {
     "inline-style-prefixer": "^0.6.7",
+    "lodash.includes": "^4.0.1",
     "lodash.isfinite": "^3.2.1"
   },
   "engines": {

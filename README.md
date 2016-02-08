@@ -53,7 +53,7 @@ Lower lever `Stack` and `Wrap` add:
 Even lower `Flex` add:
 * `wrap`: `true`, `false` (default)
 
-Also check [tests](https://github.com/aush/react-stack/blob/master/tests).
+Also check [tests](https://github.com/aush/react-stack/blob/master/test).
 ###Demo
 Navigate to the 'demo' folder and execute
 ```

@@ -14,14 +14,11 @@ module.exports = config => {
     coverageReporter: _IS_CI_ ?
       { type: 'lcov', dir: 'coverage/' } :
       { type: 'html', dir: 'coverage/' },
-    // autoWatch: _IS_CI_ ? false : true,
-    autoWatch: false,
-    // singleRun: (_IS_CI_ || _IS_BUILDING_PACKAGE_) ? true : false,
-    singleRun: true,
+    autoWatch: _IS_CI_ ? false : true,
+    singleRun: (_IS_CI_ || _IS_BUILDING_PACKAGE_) ? true : false,
     browsers: _IS_TRAVIS_CI_ ?
       ['Chrome_travis_ci'] :
-      // ['Chrome'],
-      [],
+      ['Chrome'],
     customLaunchers: {
       Chrome_travis_ci: {
         base: 'Chrome',
@@ -29,10 +26,10 @@ module.exports = config => {
       },
     },
     files: [
-      './tests/**/*.spec.js*',
+      './test/**/*.spec.js*',
     ],
     preprocessors: {
-      './tests/**/*.spec.js*': ['webpack'],
+      './test/**/*.spec.js*': ['webpack'],
     },
     webpack: {
       devtool: 'inline-source-map',
@@ -42,7 +39,7 @@ module.exports = config => {
           test: /\.jsx?$/,
           loader: 'babel',
           include: [
-            path.join(__dirname, 'tests'),
+            path.join(__dirname, 'test'),
             path.join(__dirname, 'src'),
           ],
         }, {
