@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.join(__dirname, 'dist'),
     filename: 'index.js',
-    library: 'ReactRectangle',
+    library: 'ReactStack',
     libraryTarget: 'umd',
   },
   externals: {
