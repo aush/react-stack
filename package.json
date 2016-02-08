@@ -1,6 +1,6 @@
 {
   "name": "react-stack",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "description": "Simple and intuitive flex-based layout",
   "scripts": {
     "clean": "rimraf dist/*",
