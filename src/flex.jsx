@@ -21,7 +21,7 @@ export default ({ orientation, wrap, justifyContent, alignItems, alignContent, s
   };
 
   return (
-    <div style={{ ...style, ...prefixer.prefix(flexContainerStyle) }} {...rest}>
+    <div style={{ ...prefixer.prefix(flexContainerStyle), ...style }} {...rest}>
     {
       React.Children.map(children, (child, i) => {
         const flexItemStyle = {
@@ -32,7 +32,7 @@ export default ({ orientation, wrap, justifyContent, alignItems, alignContent, s
             'flex-' + child.props.align :
             includes(['center', 'baseline', 'stretch'], child.props.align) ? child.props.align : 'auto',
         };
-        return React.cloneElement(child, { key: i, style: { ...child.props.style, ...prefixer.prefix(flexItemStyle) } });
+        return React.cloneElement(child, { key: i, style: { ...prefixer.prefix(flexItemStyle), ...child.props.style } });
       })
     }
     </div>
